@@ -15,7 +15,6 @@ class JsonResponseMiddleware
 
         $body = $response->getBody()->__toString();
 
-        // Verifica se o corpo parece ser JSON
         if ($this->isJson($body)) {
             return $response->withAddedHeader("Content-Type", "application/json");
         } else {
@@ -23,7 +22,6 @@ class JsonResponseMiddleware
         }
     }
 
-    // Função auxiliar para verificar se uma string é JSON válida
     private function isJson($string): bool
     {
         json_decode($string);

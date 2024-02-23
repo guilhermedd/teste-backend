@@ -87,3 +87,8 @@ Para os filtros e Ordenamentos:
 
 Para rodar o Docker:
 `docker-compose up`
+
+O log da ultima pessoa a mudar o valor do iphone 8 se encontra em /report
+
+Foi utilizado o postman para realização deste teste!
+O arquivo se chama `Teste Backend.postman_collection.json`

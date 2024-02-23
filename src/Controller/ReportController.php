@@ -44,13 +44,15 @@ class ReportController
             foreach ($productLogs as $log) {
                 $adminUserData = $this->getAdminUserData($log->admin_user_id);
 
-                $logsFormatted[] = "({$adminUserData['name']}, {$log->action}, {$log->timestamp})";
-
-                if ($log->action === "update" && (!$hasUpdated || $log->timestamp > $whenChangedTemp)) {
-                    $hasUpdated = true;
-                    $whenChangedTemp = new DateTime($log->timestamp);
-                    $whoChangedTemp = $adminUserData['name'];
+                if ($adminUserData) {
+                    $logsFormatted[] = "({$adminUserData['name']}, {$log->action}, {$log->timestamp})";
                 }
+
+                    if ($log->action === "update" && (!$hasUpdated || $log->timestamp > $whenChangedTemp)) {
+                        $hasUpdated = true;
+                        $whenChangedTemp = new DateTime($log->timestamp);
+                        $whoChangedTemp = $adminUserData['name'];
+                    }
             }
 
             $data[] = [
@@ -69,7 +71,7 @@ class ReportController
             }
         }
 
-        print_r("Quem mudou o valor do iphone 8 por último foi: {$whoChangedOld}\n");
+        print_r("Quem mudou o valor do iphone 8 por último foi: {$whoChangedOld}!\n");
 
         $report = "<table style='font-size: 10px;'>";
         foreach ($data as $row) {

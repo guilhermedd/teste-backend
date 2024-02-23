@@ -21,28 +21,28 @@ class ProductController
 
     public function getAll(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
-        // Obtenha os parâmetros da consulta da URL
+        // Obter os parâmetros da consulta da URL
         $queryParams = $request->getQueryParams();
 
-        // Obtenha o ID do admin_user do cabeçalho da solicitação, ou defina um valor padrão se não estiver presente
+        // Obter o ID do admin_user do cabeçalho da solicitação, ou defina um valor padrão se não estiver presente
         $adminUserId = $queryParams['admin_user_id'] ?? 1;
 
-        // Obtenha o método de ordenação da consulta da URL ou use um padrão
+        // Obter o método de ordenação da consulta da URL ou use um padrão
         $ordenationMethod = $queryParams['ordenation_method'] ?? 'id';
 
-        // Defina o método de separar ativos e não ativos
+        // Definir o método de separar ativos e não ativos
         $isActive = $queryParams['is_active'] ?? null;
 
-        // Defina o método de separar as categorias
+        // Definir o método de separar as categorias
         $categoryName = $queryParams['category'] ?? null;
 
-        // Chame o método getAll do serviço com os parâmetros
+        // Chamar o método getAll do serviço com os parâmetros
         $stm = $this->service->getAll($adminUserId, $ordenationMethod, $isActive, $categoryName);
 
-        // Obtenha os resultados usando fetchAll
+        // Obter os resultados usando fetchAll
         $products = $stm->fetchAll();
 
-        // Adicione a lista de produtos ao corpo da resposta
+        // Adicionar a lista de produtos ao corpo da resposta
         $response->getBody()->write(json_encode($products));
 
         // Defina o cabeçalho Content-Type para application/json
@@ -56,19 +56,19 @@ class ProductController
     public function getOne(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
         $productId = $args['id'];
-        // Obtenha o ID do admin_user do cabeçalho da solicitação, ou defina um valor padrão se não estiver presente
+        // Obter o ID do admin_user do cabeçalho da solicitação, ou defina um valor padrão se não estiver presente
         $adminUserId = $request->getHeader('admin_user_id')[0] ?? 1; // Defina um valor padrão (por exemplo, 1)
 
-        // Chame o método getOne do serviço para obter a lista de produtos
+        // Chamar o método getOne do serviço para obter a lista de produtos
         $stm = $this->service->getOne($productId);
 
-        // Obtenha os resultados usando fetchAll
+        // Obter os resultados usando fetchAll
         $products = $stm->fetchAll();
 
-        // Adicione a lista de produtos ao corpo da resposta
+        // Adicionar a lista de produtos ao corpo da resposta
         $response->getBody()->write(json_encode($products));
 
-        // Defina o cabeçalho Content-Type para application/json
+        // Definir o cabeçalho Content-Type para application/json
         return $response
             ->withHeader('Content-Type', 'application/json')
             ->withStatus(200);

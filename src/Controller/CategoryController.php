@@ -34,7 +34,6 @@ class CategoryController
         $stm = $this->service->getOne($adminUserId, $categoryId);
 
         if (!$stm) {
-            // Adicione o tratamento adequado aqui, por exemplo, retorno de um erro 404 se o recurso não for encontrado.
             $response->getBody()->write(json_encode(['error' => 'Category not found']));
             return $response->withStatus(404)->withHeader('Content-Type', 'application/json');
         }

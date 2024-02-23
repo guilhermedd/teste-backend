@@ -1,0 +1,602 @@
+{
+	"info": {
+		"_postman_id": "8421a53e-d945-43aa-9e3b-e707077084ce",
+		"name": "Teste Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33123286"
+	},
+	"item": [
+		{
+			"name": "report",
+			"item": [
+				{
+					"name": "generate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"url": "{{ _.base_url }}{{ _.report }}/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "getAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"url": "{{ _.base_url }}{{ _.products }}/"
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"url": "{{ _.base_url }}{{ _.products }}/10"
+					},
+					"response": []
+				},
+				{
+					"name": "insertOne",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"company_id\": 1,\n\t\"title\": \"nome do produto\",\n\t\"price\": 123.4,\n\t\"active\": true,\n\t\"category_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{ _.base_url }}{{ _.products }}/"
+					},
+					"response": []
+				},
+				{
+					"name": "updateOne",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"company_id\": 1,\n\t\"title\": \"nome do produto\",\n\t\"price\": 123.4,\n\t\"active\": true,\n\t\"category_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{ _.base_url }}{{ _.products }}/19"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOne",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"url": "{{ _.base_url }}{{ _.products }}/19"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "getAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"url": "{{ _.base_url }}{{ _.categories }}/"
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"url": "{{ _.base_url }}{{ _.categories }}/4"
+					},
+					"response": []
+				},
+				{
+					"name": "insertOne",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"nome da categoria\",\n\t\"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{ _.base_url }}{{ _.categories }}/"
+					},
+					"response": []
+				},
+				{
+					"name": "updateOne",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"nome da categoria\",\n\t\"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{ _.base_url }}{{ _.categories }}/7"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOne",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"url": "{{ _.base_url }}{{ _.categories }}/7"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "getAll Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"url": "{{ _.base_url }}{{ _.categories }}/"
+					},
+					"response": []
+				},
+				{
+					"name": "getOne Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"url": "{{ _.base_url }}{{ _.categories }}/4"
+					},
+					"response": []
+				},
+				{
+					"name": "insertOne Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"nome da categoria\",\n\t\"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{ _.base_url }}{{ _.categories }}/"
+					},
+					"response": []
+				},
+				{
+					"name": "updateOne Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"nome da categoria\",\n\t\"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{ _.base_url }}{{ _.categories }}/7"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOne Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "admin_user_id",
+								"value": "1"
+							}
+						],
+						"url": "{{ _.base_url }}{{ _.categories }}/7"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:8000"
+		},
+		{
+			"key": "companies",
+			"value": "/companies"
+		},
+		{
+			"key": "products",
+			"value": "/products"
+		},
+		{
+			"key": "categories",
+			"value": "/categories"
+		},
+		{
+			"key": "report",
+			"value": "/report"
+		},
+		{
+			"key": " _.base_url ",
+			"value": "http://localhost:8000"
+		},
+		{
+			"key": " _.products ",
+			"value": "http://localhost:8000/products"
+		},
+		{
+			"key": "/products",
+			"value": "products"
+		},
+		{
+			"key": " _.report ",
+			"value": "report"
+		},
+		{
+			"key": " _.categories ",
+			"value": "categories"
+		},
+		{
+			"key": " _.companies ",
+			"value": "/companies"
+		}
+	]
+}
